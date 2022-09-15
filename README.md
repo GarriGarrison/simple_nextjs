@@ -1,2 +1,1 @@
-# simple_nextjs
-Учебный проект на NextJS
+# Учебный проект на NextJS
