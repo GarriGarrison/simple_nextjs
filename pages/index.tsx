@@ -1,11 +1,20 @@
-import Image from 'next/image'
-import { HeaderTag } from '../components'
+import React from 'react'
+import { HeaderTag, Button, P } from '../components'
 
 
 export default function Home() {
   return (
     <div>
       <HeaderTag tag="h1">Тест</HeaderTag>
+      <Button appearance="primary" className="123456" arrow="right">
+        Кнопка
+      </Button>
+      <Button appearance="ghost" arrow="down">
+        Кнопка
+      </Button>
+      <P size="l">Большой</P>
+      <P>Средний</P>
+      <P size="s">Малый</P>
     </div>
 
     // <div className={styles.container}>
