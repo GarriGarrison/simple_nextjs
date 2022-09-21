@@ -1,12 +1,38 @@
-import React from 'react'
-import { HeaderTag, Button, P, Tag } from '../components'
-
+import React, { useEffect, useState } from 'react'
+import { HeaderTag, Button, P, Tag, Rating } from '../components'
 
 export default function Home() {
+  const [counter, setCounter] = useState<number>(0)
+
+  const [rating, setRating] = useState<number>(4)
+
+  useEffect(() => {
+    console.log('Counter' + counter)
+
+    return function cleanup() {
+      console.log('Unmount')
+    }
+  })
+
+  useEffect(() => {
+    console.log('Mounted')
+
+    /* Не увим размонтирование т.к. это главная страничка */
+    return function cleanup() {
+      console.log('Unmount')
+    }
+  }, [])
+
   return (
-    <div>
+    <>
       <HeaderTag tag="h1">Тест</HeaderTag>
-      <Button appearance="primary" className="123456" arrow="right">
+      <HeaderTag tag="h2">{counter}</HeaderTag>
+      <Button
+        appearance="primary"
+        className="123456"
+        arrow="right"
+        onClick={() => setCounter((x) => x + 1)}
+      >
         Кнопка
       </Button>
       <Button appearance="ghost" arrow="down">
@@ -18,13 +44,17 @@ export default function Home() {
 
       <Tag size="s">Ghost</Tag>
       <Tag size="m" color="red">
-         Red
+        Red
       </Tag>
       <Tag size="s" color="green">
         Green
       </Tag>
-      <Tag size="s" color='primary'>Primary</Tag>
-    </div>
+      <Tag size="s" color="primary">
+        Primary
+      </Tag>
+
+      <Rating rating={4} isEditable setRating={setRating} />
+    </>
 
     // <div className={styles.container}>
     //   <main className={styles.main}>
