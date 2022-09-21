@@ -1,18 +1,31 @@
-import { PProps } from './Layout.props'
+import React, { FunctionComponent } from 'react'
+import { LayoutProps } from './Layout.props'
 import styles from './P.module.css'
 import cn from 'classnames'
+import { Header } from './Header/Header'
+import { Sidebar } from './Sidebar/Sidebar'
+import { Footer } from './Footer/Footer'
 
-export const P = ({ size = 'm', children, className, ...props }: PProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <p
-      className={cn(styles.p, className, {
-        [styles.s]: size === 's',
-        [styles.m]: size === 'm',
-        [styles.l]: size === 'l',
-      })}
-      {...props}
-    >
-      {children}
-    </p>
+    <>
+      <Header />
+      <div>
+        <Sidebar />
+        {children}
+      </div>
+      <Footer />
+    </>
   )
+}
+
+/* HOC (компонент высшего порядка) */
+export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+  return function withLayoutComponent(props: T): JSX.Element {
+    return (
+      <Layout>
+        <Component {...props} />
+      </Layout>
+    )
+  }
 }

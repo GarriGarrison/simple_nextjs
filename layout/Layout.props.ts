@@ -1,10 +1,5 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
-export interface PProps
-  extends DetailedHTMLProps<
-    HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
-  > {
+export interface LayoutProps {
   children: ReactNode
-  size?: 's' | 'm' | 'l'
 }
