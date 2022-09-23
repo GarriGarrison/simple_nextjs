@@ -1,9 +1,10 @@
-import { GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { HeaderTag, Button, P, Tag, Rating } from '../components'
 import { withLayout } from '../layout/Layout'
 import axios from 'axios'
 import { MenuItem } from '../interfaces/menu.inferface'
+import { firstLevelMenu } from '../helpers/helpers'
 
 function Home({menu}: HomeProps) {
   const [counter, setCounter] = useState<number>(0)
@@ -58,11 +59,17 @@ function Home({menu}: HomeProps) {
       </Tag>
 
       <Rating rating={4} isEditable setRating={setRating} />
-      {/* <ul>{menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}</ul> */}
     </>
   )
 }
 export default withLayout(Home)
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: firstLevelMenu.map(m => '/' + m.route),
+    fallback: true,
+  }
+}
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0
