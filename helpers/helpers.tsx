@@ -7,7 +7,7 @@ import { FirstLevelMenuItem } from '../interfaces/menu.inferface'
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
-    route: 'course',
+    route: 'courses',
     name: 'Курсы',
     icon: <CoursesIcon />,
     id: TopLevelCategory.Courses,
