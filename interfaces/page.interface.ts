@@ -20,7 +20,7 @@ export interface HhData {
   updateAt: Date
 }
 
-export interface TopPageModal {
+export interface TopPageModel {
   tags: string[]
   _id: string
   secondCategory: string
