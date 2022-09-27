@@ -12,7 +12,6 @@
 .firstLevel:hover,
 .firstLevelActive {
   color: var(--primary);
-
 }
 
 .firstLevel:hover svg,
@@ -25,14 +24,13 @@
   cursor: pointer;
   text-transform: uppercase;
   color: var(--gray-dark);
-
 }
 
 .secondBlock {
   margin-top: 15px;
   margin-left: 12px;
   padding-left: 32px;
-  border-left: 1px solid #DFDFDF
+  border-left: 1px solid #dfdfdf;
 }
 
 .secondLevelBlock {
@@ -59,5 +57,5 @@
 
 .thirdLevel:hover,
 .thirdLevelActive {
-  color:var(--primary);
+  color: var(--primary);
 }

@@ -5,45 +5,79 @@ body {
 
 .container {
   /* ПРИМЕР 1 */
-  /* border: 2px solid white; */
-  /* display: grid; */
-  /* grid-template-columns: 100px 100px 100px; */
-  /* grid-template-columns: 1fr 1fr 1fr; */ /* 33% 33% 33% */
-  /* grid-template-columns: 10% auto 10%;*/
-  /*grid-template-columns: repeat(2, 1fr);*/ /* повторить 10 раз */
-  /*grid-template-rows: 200px 200px;*/
-  /*grid-auto-rows: 100px;*/ /* остальные строчки, которые не попали в шаблон (в шаблоне только две строчки) */
-  /* grid-auto-columns: ; */
-  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */ /* auto-fit */
 
-  /* gap: 10px 100px; */ /* отступы между ячейками */
+  /* border: 2px solid white; */
+
+  /* display: grid; */
+
+  /* grid-template-columns: 100px 100px 100px; */
+
+  /* grid-template-columns: 1fr 1fr 1fr; */
+
+  /* 33% 33% 33% */
+
+  /* grid-template-columns: 10% auto 10%; */
+
+  /* grid-template-columns: repeat(2, 1fr); */
+
+  /* повторить 10 раз */
+
+  /* grid-template-rows: 200px 200px; */
+
+  /* grid-auto-rows: 100px; */
+
+  /* остальные строчки, которые не попали в шаблон (в шаблоне только две строчки) */
+
+  /* grid-auto-columns: ; */
+
+  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+
+  /* auto-fit */
+
+  /* gap: 10px 100px; */
+
+  /* отступы между ячейками */
+
   /* column-gap: 10px; */
+
   /* row-gap: 100px; */
 
   /* height: 500px; */
 
   /* justify-items: left;  start и end для мультиязычности (арабские языки с право на лево */
+
   /* stretch - значение по умолчанию (растягивание по ширине */
+
   /* align-items: flex-end; */
-  /*align-content: space-around; */ /* space-beetwen*/ /*space-evenly - равномерное распределение */
+
+  /* align-content: space-around; */
+
+  /* space-beetwen */
+
+  /* space-evenly - равномерное распределение */
 
   /* grid-auto-flow: ; */
 
   /* ПРИМЕР 2 */
+
   /* display: grid; */
+
   /* gap: 10px; */
+
   /* grid-template-columns: [startline] 1fr [middle] 1fr 1fr [endline]; */
+
   /* grid-auto-rows: 100px; */
 
   /* ПРИМЕР 3 */
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
+
   /* grid-template-rows: 1fr 1fr 1fr; */
   grid-template-areas:
-    'header  header header'
-    'sidebar body   body  '
-    '.  footer footer';
+    "header  header header"
+    "sidebar body   body  "
+    ".  footer footer";
 }
 
 .container div {
@@ -57,11 +91,17 @@ body {
 }
 
 /* ПРИМЕР 2 */
+
 /* .c1 { */
+
 /* grid-column-start: 1; */
+
 /* grid-column-end: span 3; */
+
 /* grid-column-start: middle; */
+
 /* grid-column-end: endline; */
+
 /* } */
 
 /* ПРИМЕР 3 */
@@ -86,9 +126,9 @@ body {
   .container {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'header'
-      'body'
-      'sidebar'
-      'footer';
+      "header"
+      "body"
+      "sidebar"
+      "footer";
   }
 }
